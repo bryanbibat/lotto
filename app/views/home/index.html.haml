@@ -1,0 +1,23 @@
+%h1 Lotto Simulator
+
+= form_for @ticket, :url => tickets_path  do |f|
+  = f.error_messages :header_message => "You have submitted an invalid ticket!"
+
+  %ul#number_table
+    - (1..45).each do |x|
+      %li
+        = check_box_tag "ticket[numbers][]", x, false, :id => "ticket_numbers_#{x}"
+        = f.label :numbers, x, :value => x
+
+  %p
+    = f.label :attempts, "Play these numbers"
+    = f.select :attempts, [["1 time", 1], ["104 times (twice a week for a year)", 104], ["1,040 times (twice a week for 10 years)", 1040]]
+
+  %p
+    = f.submit "Play Lotto"
+
+- if @lotto
+  = render :partial => "results", :locals => { :ticket => @ticket, :lotto => @lotto }
+
+#summary 
+  %p= "As of now, players have won a total of #{number_to_currency @winnings}. They have also spent #{number_to_currency @loss} for a net #{number_to_currency(@winnings - @loss)}"

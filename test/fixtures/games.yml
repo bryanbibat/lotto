@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  gain: 1
+  loss: 1
+  numbers: MyString
+
+two:
+  gain: 1
+  loss: 1
+  numbers: MyString

@@ -1,0 +1,26 @@
+%h2 Results
+
+%p
+  = "You picked the numbers #{ticket.numbers.join " "}."
+  Here's the result of playing the same numbers 
+  = "#{pluralize ticket.attempts, "time"}:"
+
+%table
+  %tr 
+    %th Winning Numbers
+    %th Result
+  - lotto.results.each do |result| 
+    %tr
+      %td= result[0]
+      %td
+        != result[1]
+        = "and won #{number_to_currency result[2]}"
+
+%p
+  Your total winnings is
+  = number_to_currency lotto.total_winnings
+%p
+  You spent 
+  = number_to_currency lotto.total_expenses
+  with a net result of
+  = number_to_currency lotto.net
