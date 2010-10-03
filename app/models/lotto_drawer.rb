@@ -25,7 +25,7 @@ class LottoDrawer
   end
 
   def total_expenses
-    @ticket.attempts * 10
+    @ticket.attempts * (@ticket.size > 45 ? 20 : 10)
   end
 
   def net 
@@ -41,20 +41,17 @@ class LottoDrawer
     result.empty? ? "no correct" : "the number#{result.size != 1 ? "s" : ""} <strong>#{result.join " "}</strong> correct"
   end
 
+  PrizeMatrix = { 
+    42 => { 3 => 20, 4 => 500, 5 => 20000, 6 => 6000000 },
+    45 => { 3 => 40, 4 => 600, 5 => 23000, 6 => 10000000 },
+    49 => { 3 => 100, 4 => 1000, 5 => 56000, 6 => 15000000 },
+    55 => { 3 => 150, 4 => 2000, 5 => 150000, 6 => 30000000 }}
+
+
   def winnings(draw)
     result = (@ticket.numbers & draw).size
-    case result
-    when 3
-      40
-    when 4
-      600
-    when 5
-      23000
-    when 6 
-      10000000 
-    else  
-      0
-    end
+    return 0 if result < 3
+    PrizeMatrix[@ticket.size][result]
   end
 
 end

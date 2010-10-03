@@ -1,0 +1,11 @@
+!!!
+%html
+%head
+  %title Lotto Simulator
+  = stylesheet_link_tag :all 
+  = javascript_include_tag "jquery", "application"
+  = csrf_meta_tag 
+%body
+  #content
+    = yield 
+

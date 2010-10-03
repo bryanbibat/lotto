@@ -34,6 +34,6 @@ production:
   reconnect: false
   database: lotto_production
   pool: 5
-  username: test
-  password: test
+  username: lotto_production 
+  password: lotto_production
   socket: /var/run/mysqld/mysqld.sock
