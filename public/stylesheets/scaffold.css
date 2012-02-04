@@ -1,5 +1,7 @@
 body {
-  background-color: #99d2fa;
+  background: #b8c6df;
+  background: -moz-linear-gradient(top, #b8c6df 0%, #6d88b7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0% #b8c6df), color-stop(100%, #6d88b7));
   color: #333333; }
 
 body, p, ol, ul, td {
