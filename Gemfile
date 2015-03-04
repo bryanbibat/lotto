@@ -1,11 +1,11 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.0.20'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '~> 0.2.4'
+gem 'mysql2', '~> 0.3.11'
 gem 'capistrano'
 
 # Use unicorn as the web server
