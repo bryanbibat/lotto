@@ -48,7 +48,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mysql2 (0.3.18)
+    mysql2 (0.2.24)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -91,5 +91,5 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 2.14.1)
   haml (= 3.0.18)
-  mysql2 (~> 0.3.11)
+  mysql2 (~> 0.2.18)
   rails (= 3.0.20)
