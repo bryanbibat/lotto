@@ -6,7 +6,7 @@ gem 'rails', '3.0.20'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.3.11'
-gem 'capistrano'
+gem 'capistrano', '~> 2.14.1'
 
 # Use unicorn as the web server
 gem 'haml', '3.0.18'
